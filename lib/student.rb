@@ -5,6 +5,7 @@ class Student
   attr_reader :id
 
   def initialize(id=nil, name, grade)
+    @id=id
     @name=name
     @grade=grade    
   end
@@ -51,6 +52,7 @@ class Student
   end
   
   def self.new_from_db(row)
-    
+    new_student = self.new(row[0], row[1], row[2])
+    new_student
   end
 end
